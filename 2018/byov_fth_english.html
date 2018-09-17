@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Build Your Own Benefits Video</title>
+    <link href="css/bootstrap.min-3.3.6.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/custom-2017.css" rel="stylesheet">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/videos.js"></script>
+    <script src="ga/google-analytics.js"></script>
+  </head>
+  <body id="eng">
+
+    <div id="lightbox"></div>
+    <div id="lightbox-panel" class="container">
+      
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="banner-english">
+            <img src="img/video-banner-english.jpg" alt="banner" class="img-responsive">
+          </div>
+        </div>
+        <div class="col-xs-10">
+          <h2 id="videoName"></h2>
+        </div>
+        <div class="col-xs-2">
+          <a class="close" id="close-panel">close</a>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="player-block">
+            <!-- Start of Brightcove Player -->
+            <!--
+
+            By use of this code snippet, I agree to the Brightcove Publisher T and C
+            found at https://accounts.brightcove.com/en/terms-and-conditions/.
+            -->
+              <!-- bcl scripts ============================================================ -->
+
+
+            <script src="js/BrightcoveExperiences.js"></script>
+
+            <div id="container1" class="outer-container">
+              <object id="myExperience" class="BrightcoveExperience">
+                <param name="includeAPI" value="true" />
+                <param name="templateLoadHandler" value="BCLS.onTemplateLoad" />
+                <param name="templateReadyHandler" value="BCLS.onTemplateReady" />
+                <param name="bgcolor" value="#FFFFFF" />
+                <param name="width" value="768" />
+                <param name="height" value="432" />
+                <param name="playerID" value="2777811641001" />
+                <param name="playerKey" value="AQ~~,AAAAFR9P4ZE~,jkEYCMYOtM2qn7HmlgTbH-2Ih27rYq-D" />
+                <param name="isVid" value="true" />
+                <param name="isUI" value="true" />
+                <param name="dynamicStreaming" value="true" />
+                <param name="forceHTML5" value="true" />
+              </object>
+
+              <script>brightcove.createExperiences();</script>
+            </div>
+          </div>
+
+          <script id="pageScript">
+            /******** Any scripts specific to page samples should go here *********/
+            /**** Brightcove Learning Services Module ****/
+            /**** Brightcove Learning Services Module ****/
+            var BCLS = (function() {
+              // variables
+              var player,
+              APIModules,
+              mediaEvent,
+              videoPlayer,
+              eVideoName = document.getElementById("videoName"),
+              eTimeRemaining = document.getElementById("timeRemaining"),
+              currentVideoIndex = 0,
+
+              // private functions
+              loadVideo = function() {
+                var newVideo;
+                if (currentVideoIndex < videos_selected.length) {
+                  // set new video
+                  newVideo = bc_id[videos_selected[currentVideoIndex]];
+                  // load the new video
+                  videoPlayer.loadVideoByID(newVideo);
+                  // update the video title display
+                  eVideoName.innerHTML = video_names[videos_selected[currentVideoIndex]];
+                  // increment the current video index
+                  currentVideoIndex++;
+                }
+              }
+              loadOne = function(numbero) {
+                var newVideo;
+                newVideo = bc_id[videos_selected[numbero]];
+                videoPlayer.loadVideoByID(newVideo);
+                eVideoName.innerHTML = video_names[videos_selected[numbero]];
+                currentVideoIndex = numbero;
+              }
+              // public functions and data
+              return {
+                loadFirstVideo : function() {
+      		        setTimeout(function() {
+                    loadVideo();
+                  }, 4000);
+                },
+                /**** template loaded event handler ****/
+                onTemplateLoad : function(experienceID) {
+                  // get a reference to the player and API Modules and Events
+                  player = brightcove.api.getExperience(experienceID);
+                  APIModules = brightcove.api.modules.APIModules;
+                  mediaEvent = brightcove.api.events.MediaEvent;
+                },
+                /**** template ready event handler ****/
+                onTemplateReady : function(evt) {
+                  // get references to modules
+                  videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+                  // add an event listener for video PROGRESS events
+                  // note that handler name must be the *public* name
+                  videoPlayer.addEventListener(mediaEvent.PROGRESS, BCLS.onProgress);
+                  // add an event listener for video COMPLETE events
+                  videoPlayer.addEventListener(mediaEvent.COMPLETE, BCLS.onComplete);
+                  captionsModule = player.getModule(APIModules.CAPTIONS);
+                  // captionsModule.setCaptionsEnabled(true);
+                  // load the first video
+                  captionsModule.setStyleOptions("show-background:true;background-color:#004663;");
+                  // loadVideo();
+                },
+                /**** complete event handler ****/
+                onComplete : function(evt) {
+                  //console.log("onComplete video");
+                  loadVideo();
+                },
+                /**** progress event handler ****/
+                onProgress : function(evt) {
+                  var timeRemaining;
+                  timeRemaining = Math.round((evt.duration - evt.position)*100) / 100;
+                  eTimeRemaining.innerHTML = "Time remaining: " + timeRemaining;
+                }
+              }
+            }());
+          </script>
+        </div>
+
+        <div class="col-lg-4">
+          <h4>Playlist</h4>
+          <p id="playlist"></p>
+        </div>
+      </div>
+
+    </div>
+
+    <section id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-3 col-md-push-9">
+            <a href="byov_fth_spanish.html" class="pull-right">En Espa&ntilde;ol</a><br><br class="hidden-xs hidden-sm">
+            <a href="quiz_ft_english.html" class="pull-right">HRA or HSA? Take the Quiz</a>
+          </div>
+          <div class="hidden-xs hidden-sm col-md-2 col-md-push-2">
+            <img src="img/video-guy.png" alt="Video Guy">
+          </div>
+          <div class="hidden-xs hidden-sm col-md-2 col-md-push-2">
+            <img src="img/quiz-lady.png" alt="Quiz Lady">
+          </div>
+          <div class="col-xs-12 col-md-5 col-md-pull-7 col-lg-4">
+            <img src="img/be-you-be.png" alt="Be You Be" class="img-responsive">
+            <h1>Build Your Own Benefits Video</h1>
+            <p>Watch short videos about topics that interest you. Then take the interactive quiz to get a medical plan suggestion. Links to these tools are also available in your Decision Guide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-sm-4">
+            <div class="box" id="video-1">
+              <h2>What&rsquo;s Changing in 2016</h2>
+              <p>2:42</p><img src="img/Play-Button.png" alt="play button">
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4">
+            <div class="box" id="video-2">
+              <h2>How Does An Account-<br class="visible-md">based Plan Work</h2>
+              <p>3:59</p><img src="img/Play-Button.png" alt="play button">
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4">
+            <div class="box" id="video-3">
+              <h2>How to Choose Your Medical Plan</h2>
+              <p>3:00</p><img src="img/Play-Button.png" alt="play button">
+            </div>
+          </div>
+          <div class="col-md-offset-2 col-md-4 col-xs-12">
+            <a href="quiz_ft_english.html">
+              <div class="box-red">
+                <h2>HRA or HSA? Take an Interactive Quiz</h2>
+                <p>Answer just six simple questions and get a suggestion.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script src="js/bootstrap.min-3.3.6.js"></script>
+    <script src="js/event-tracking.js"></script>
+    <script>
+        var videos_selected = [];
+        var video_names = [];
+        video_names[1] = "What's Changing in 2016";
+        video_names[2] = "How Account-Based Plans Work";
+        video_names[3] = "How To Choose Your Medical Plan";
+
+        var bc_id = [];
+        bc_id[1] = "4653344172001";
+        bc_id[2] = "4653334682001";
+        bc_id[3] = "5625757989001";
+
+        $(document).ready(function () {
+          $('#video-1').click(function () {
+            $('#lightbox').fadeIn(400, function () {
+              videos_selected = [1, 2, 3];
+              $('#lightbox-panel').css('top', 0);
+              playlist();
+              BCLS.loadFirstVideo();
+            });
+          });
+          $('#video-2').click(function () {
+            $('#lightbox').fadeIn(400, function () {
+              videos_selected = [2, 3, 1];
+              $('#lightbox-panel').css('top', 0);
+              playlist();
+              BCLS.loadFirstVideo();
+            });
+          });
+          $('#video-3').click(function () {
+            $('#lightbox').fadeIn(400, function () {
+              videos_selected = [3, 1, 2];
+              $('#lightbox-panel').css('top', 0);
+              playlist();
+              BCLS.loadFirstVideo();
+            });
+          });
+          $('#close-panel').click(function () {
+            $('#lightbox-panel').css('top', -9999);
+            $('#lightbox').fadeOut(400);
+            window.location.reload();
+          });
+        });
+    </script>
+
+  </body>
+</html>

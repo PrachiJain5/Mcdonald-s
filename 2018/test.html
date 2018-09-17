@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<head>
+	<meta charset="UTF-8">
+	<title>Target Test Page</title>
+</head>
+<body class="mt-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<p><a href="#" id="full-time">Full Time Population</a></p>
+				<p><a href="#" id="part-time">Part Time Population</a></p>
+				<p><a href="#" id="hawaii">Hawaii Population</a></p>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script>
+		function clearLocalStorage() {
+			localStorage.setItem('population', '');
+		}
+		function openWindow() {
+			window.open('index.html', '_blank');
+		}
+
+		$(document).ready(function() {
+			$('#full-time').on('click', function(){
+				clearLocalStorage();
+				localStorage.setItem('population', 'ft');
+				openWindow();
+			});
+			$('#part-time').on('click', function(){
+				clearLocalStorage();
+				localStorage.setItem('population', 'pt');
+				openWindow();
+			});
+			$('#hawaii').on('click', function(){
+				clearLocalStorage();
+				localStorage.setItem('population', 'hi');
+				openWindow();
+			});
+		});
+	</script>
+</body>
+</html>
