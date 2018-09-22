@@ -24,7 +24,7 @@ a {
 }
 a:hover {
 	color: #893579;
-	text-decoration: underline;
+	/* text-decoration: underline; */
 	font-family: 'Arial Bold';
 }
 h1 {
@@ -44,13 +44,14 @@ h3{
 	font-family: 'Target Bold';
 }
 #home h5 {
-	color: #893579;
+	color: #f7f7f7;
 	font-family: 'Target Roman';
 }
-.part-time,
-.full-time,
-.hawaii,
-.error {
+
+.staffrm,
+.crew,
+.staffrmhi,
+.crewhi{
 	display: none;
 }
 p {
@@ -63,7 +64,7 @@ p {
 /* navbar */
 #home header {
 	background-color: #6D6E71;
-	height: 58px;
+	/* height: 58px; */
 }
 header {
 	/* margin-bottom: 20px; */
@@ -72,28 +73,38 @@ header {
 .navbar-light .navbar-nav .nav-link:hover {
 	color: #FFFFFF;
 	position: relative;
-	font-family:'Arial Bold';
-	align-items: center;
-	font-size: 16px;
 }
 .navbar .nav-link {
 	font-family: 'Arial Bold';
 }
 .navbar .nav-link.active:after,
 .navbar .nav-link:hover:after {
+	content: '..................................................';
 	position: absolute;
-	/* bottom: -7px; */
+	bottom: -7px;
 	left: 0;
 	color: #F5C400;
 	right: 0;
 	overflow: hidden;
 	letter-spacing: 2px;
 	margin: 0;
-	font-size: 22px;
+	font-size: 22px;	
 }
 nav.navbar.navbar-expand-lg.navbar-light {
-    margin-left: 261px;
+	/* margin-left: 261px; */
+	
 }
+a.nav-link.mr-3.active {
+    /* color: #F5C400; */
+	background-color: #F5C400 ;
+	color: white;
+}
+.navbar-light .navbar-nav .nav-link.active{
+	color: white;
+
+}
+    
+
 @media (min-width: 992px) {
 	.navbar .nav-link.active:after,
 	.navbar .nav-link:hover:after {
@@ -113,6 +124,7 @@ header .nav-item {
 #home ul li {
 	margin-bottom: 8px;
 }
+
 
 /* logo */
 
@@ -134,7 +146,7 @@ ul li {
 	margin-bottom: 7px;
 }
 ul li:before {
-	color: #c00;
+	color: #F5C400;
 	content: '\2022';
 	font-size: 1.2em;
 	position: absolute;
@@ -158,7 +170,7 @@ ol li:before {
 	position: absolute;
 	left: -2em;
 	text-align: right;
-	color: #c00;
+	color: #893579;
 }
 .nav-item img.mx-auto{ height: 31px; width: 28px;}
 
@@ -191,8 +203,8 @@ ol li:before {
 	font-family: 'Target Bold';
 }
 .sidebar-background {
-	background-color: #ccc;
-	width: 220px;
+	background-color: #EBEBEB;
+	width: 200px;
 	height: calc(100% - 110px);
 	position: absolute;
 	z-index: -1;
@@ -231,8 +243,9 @@ ol li:before {
 /* accordions */
 .open-all,
 .close-all {
-	color: #c00 !important;
-	font-family: 'Target Roman';
+	color: #893579 !important;
+	font-family: 'Arial';
+	font-size:14px;
 	cursor: pointer;
 }
 .open-all:hover,
@@ -242,14 +255,14 @@ ol li:before {
 	text-decoration: underline !important;
 }
 .accordion .card-header.collapsed {
-	background-color: #ccc
+	background-color: #893579;
 }
 .accordion .card-header {
-	background-color: #dcddde;
+	background-color: #893579;
 }
-.accordion .card-header {
+/* .accordion .card-header {
 	color: #333;
-}
+} */
 .accordion .card-body {
 	padding: .5rem;
 }
@@ -258,16 +271,22 @@ ol li:before {
 	font-family: 'Target Roman';
 }
 .sprite.accordion-arrow {
-	background: url('../img/icon-arrow.png') no-repeat top left;
+	background: url('../img/accordian_closed.png') no-repeat top left;
 	background-position: 0 0;
-	width: 17px;
-	height: 17px;
+	width: 34px;
+	height: 34px;
 	position: absolute;
-	left: 0.8rem;
-	top: 0.75rem;
+	left: -1.2rem;
+	top: 0.35rem;
 }
 .accordion-arrow.accordion-arrow-rotate {
-	transform: rotate(90deg);
+	background: url('../img/accordian_open.png') no-repeat top left;
+	background-position: 0 0;
+	width: 34px;
+	height: 34px;
+	position: absolute;
+	left: -1.2rem;
+	top: 0.4rem;
 }
 
 /* circle images */
@@ -336,9 +355,13 @@ ol li:before {
 .table-striped tbody tr:nth-of-type(odd) {
 	background-color: transparent;
 }
-.bg-grey,
+/* .bg-grey,
 .table-striped tbody tr:nth-of-type(even) {
 	background-color: #dcddde;
+} */
+.thead_light {
+	background-color: #DCDDDE;
+	/* color: #fff; */
 }
 
 /* footer */

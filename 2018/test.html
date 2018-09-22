@@ -9,9 +9,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<p><a href="#" id="full-time">Full Time Population</a></p>
-				<p><a href="#" id="part-time">Part Time Population</a></p>
-				<p><a href="#" id="hawaii">Hawaii Population</a></p>
+				<p><a href="#" id="staffrm">Staff</a></p>
+				<p><a href="#" id="crew">Crew</a></p>
+				<p><a href="#" id="staffrmhi">StaffRmHI </a></p>
+				<p><a href="#" id="crewhi">crewHI </a></p>
+
 			</div>
 		</div>
 	</div>
@@ -25,19 +27,25 @@
 		}
 
 		$(document).ready(function() {
-			$('#full-time').on('click', function(){
+			
+			$('#staffrm').on('click', function(){
 				clearLocalStorage();
-				localStorage.setItem('population', 'ft');
+				localStorage.setItem('population', 'staffrm');
 				openWindow();
 			});
-			$('#part-time').on('click', function(){
+			$('#crew').on('click', function(){
 				clearLocalStorage();
-				localStorage.setItem('population', 'pt');
+				localStorage.setItem('population', 'crew');
 				openWindow();
 			});
-			$('#hawaii').on('click', function(){
+			$('#staffrmhi').on('click', function(){
 				clearLocalStorage();
-				localStorage.setItem('population', 'hi');
+				localStorage.setItem('population', 'staffrmhi');
+				openWindow();
+			});
+			$('#crewhi').on('click', function(){
+				clearLocalStorage();
+				localStorage.setItem('population', 'crewhi');
 				openWindow();
 			});
 		});
