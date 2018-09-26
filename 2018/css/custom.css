@@ -185,6 +185,64 @@ ol li:before {
 	background-color: #eee;
 }
 
+things to consider section */
+.consider {
+	background-color: #ccc;
+}
+.consider .nav-link {
+	width: 122px;
+	height: 122px;
+	color: #c00;
+	font-family: 'Arial Bold';
+	font-size: .8125rem;
+	border: 2px solid transparent;
+}
+.consider .nav-link:hover,
+.consider .nav-link:focus,
+.consider .nav-link.active {
+	border: 2px solid #c00;
+	background-color: transparent;
+	color: #c00;
+	font-family: 'Arial Bold';
+}
+.sidebar-background {
+	background-color: #EBEBEB;
+	width: 200px;
+	height: calc(100% - 110px);
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 110px;
+}
+#pills-tabContent .sidebar-background {
+	top: 0;
+	height: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	z-index: 1;
+}
+.consider .rounded-circle.position-absolute {
+	top: -3rem;
+}
+
+/* 2018-benefits section */
+/* .benefits-2018-nav .border {
+	border-width: 2px !important;
+}
+.benefits-2018-nav .m-0 {
+	margin: -1px !important;
+}
+.benefits-2018-nav .nav-link.active {
+	background-color: #c00;
+	color: #fff;
+}
+.benefits-2018-nav .nav-link {
+	font-size: .85rem;
+	border-color: #c00 !important;
+}
+
 /* accordions */
 .open-all,
 .close-all {
@@ -320,8 +378,6 @@ ul.navbar-nav.mr-auto {
 
 div#logo {
 	left: 20px;
-	
-
     /* margin-left: -150px;
     margin-right: 146px; */
 } 
