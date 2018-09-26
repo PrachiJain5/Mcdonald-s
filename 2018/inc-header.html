@@ -3,7 +3,7 @@
 		<a class="navbar-brand" href="./">
 			<img src="img/global_people.png" style="display:none;">
 		</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" id = "navbarSupportedBtn" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -41,3 +41,18 @@
 		</div>
 	</div>
 </nav>
+
+<script>
+$('#navbarSupportedBtn').on('click',function (){
+	console.log($('.home-body')[0].attributes[1])
+	
+	if($('.home-body')[0].attributes[1]==undefined || $('.home-body')[0].attributes[1].value.split(' ')[1]=='0px;'){
+		$('.home-body').css({'margin-top':$('#navbarSupportedContent').height()})
+	}else{
+		console.log($('.home-body')[0].attributes[1].value.split(' ')[1])
+
+		$('.home-body').css({'margin-top':'0px'})
+	}
+	
+})
+</script>
