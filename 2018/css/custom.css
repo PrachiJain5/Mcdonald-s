@@ -389,7 +389,7 @@ a.nav-link {
     margin: 1px;
 }
 .sidebar-background {
- right:120px;
+margin-left: 30px;
     /* left: 26px; */
 }
 @media (min-width: 992px){
