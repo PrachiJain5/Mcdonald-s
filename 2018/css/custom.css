@@ -66,7 +66,7 @@ p {
 #home header {
 	background-color: #6D6E71;
 	/* height: 58px; */
-	padding-bottom: 10px;
+	/* padding-bottom: 10px; */
 }
 header {
 	/* margin-bottom: 20px; */
@@ -181,8 +181,13 @@ ol li:before {
 .card-callout {
 	border-width: 0 0 0 2px;
 	border-style: solid;
-	border-color: #c00;
-	background-color: #eee;
+	border-color: ;
+	background-color: #893579;
+	color: white;
+}
+.btn-primary{
+	background-color: #893579 !important;
+	border-color: #893579 !important;
 }
 
 things to consider section */
@@ -376,9 +381,10 @@ ul.navbar-nav.mr-auto {
 	width: 698px !important;
 } */
 
-div#logo {
-    left: 20px;
-    margin-bottom: 20px;
+	div#logo {
+		left: 20px;
+		margin-bottom: 40px;
+		margin-top: -20px;
 }
 
 .navbar-light {
@@ -449,11 +455,84 @@ img.footerImage {
 		margin-bottom: 20px;
 	}
  }
+ @media screen and (max-width: 425px) {
+	button.navbar-toggler {
+		position: absolute;
+		right: 20px;
+		top: 30px;
+		z-index: 999;
+	}
+	div#navbarSupportedContent {
+		margin-top: 64px;
+	}
+	div#navbarSupportedContent {
+		margin-top: 85px;
+		background: white !important;
+		position: absolute;
+		top: 10px;
+		z-index: 9999;
+		width: 100%;
+	}
+	a.nav-link {
+		color: #333333 !important;
+		text-align: right;
+	}
+	#home ul li:last-child {
+		margin-bottom: 20px;
+	}
+ }
 
  /* Apply the Style after 424px */
  @media screen and (min-width: 425px) {
 
  }
+
+ @media screen and (max-width: 991px) {
+	button.navbar-toggler {
+		position: absolute;
+		right: 20px;
+		top: 30px;
+		z-index: 999;
+	}
+	div#navbarSupportedContent {
+		margin-top: 64px;
+	}
+	div#navbarSupportedContent {
+		margin-top: 85px;
+		background: white !important;
+		position: absolute;
+		top: 10px;
+		z-index: 9999;
+		width: 100%;
+	}
+	a.nav-link {
+		color: #333333 !important;
+		text-align: right;s
+	}
+	#home ul li:last-child {
+		margin-bottom: 20px;
+	}
+	#sideImage{
+		display: none;
+	}
+	.d-md-block{
+		display: none !important;
+	}
+	.sidebar-background {
+		background-color: #EBEBEB;
+		width: 200px;
+		height: calc(100% - 110px);
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		right: 0;
+		margin: auto;
+		top: 110px;
+}
+.sidebar-background {
+    margin-left: 30px;
+    /* left: 26px; */
+}
 /*
 @media screen and (max-width: 767px) {
 	.sidebar-content {
