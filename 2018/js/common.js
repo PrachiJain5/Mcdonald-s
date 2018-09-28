@@ -180,10 +180,10 @@ function accordionActions() {
 function myEnvironment() {
 	var environmentString = location.hostname; // ex. qa.makeityoursource.com/compareprices/csc/
 	var returnValue;
-	if (environmentString.indexOf("qa.") > -1 || environmentString.indexOf("qc.") > -1 || environmentString.indexOf("localhost") > -1) {
+	if (environmentString.indexOf("qa.") > -1 || environmentString.indexOf("qc.") > -1 || environmentString.indexOf("localhost") > -1 || environmentString.indexOf('127.0.0.1') > -1)  {
 		returnValue = "UA-51404617-1";
 	} else {
-		returnValue = "UA-26291185-35"; // Replace as appropriate with Production Property Id
+		returnValue = "UA-6459246-150"; // Replace as appropriate with Production Property Id
 	}
 	return returnValue;
 }
