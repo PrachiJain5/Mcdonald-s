@@ -427,6 +427,15 @@ ul.navbar-nav.mr-auto {
 		margin-top:20px;
 		padding-bottom: 20px;
 	}
+	.navbar-toggle .icon-bar {
+		display: block;
+		width: 22px;
+		height: 2px;
+		border-radius: 1px;
+	}
+	button#navbarSupportedBtn {
+		background: #FFC836;
+	}
 }
 /* .main-body{
 	width: 698px !important;
