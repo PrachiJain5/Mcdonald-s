@@ -82,6 +82,7 @@ a.nav-link.mr-3{
 .navbar-light .navbar-nav .nav-link:hover {
 	color: #FFFFFF;
 	position: relative;
+	padding-bottom: 10px !important;
 }
 .navbar .nav-link {
 	font-family: 'Arial';
@@ -89,7 +90,7 @@ a.nav-link.mr-3{
 }
 .navbar .nav-link.active:after,
 .navbar .nav-link:hover:after {
-	content: '.............................';
+	/* content: '.............................'; */
 	position: absolute;
 	bottom: -7px;
 	left: 0;
@@ -98,7 +99,11 @@ a.nav-link.mr-3{
 	overflow: hidden;
 	letter-spacing: 2px;
 	margin: 0;
-	font-size: 23px;	
+	font-size: 23px;
+	background: #F5C400;
+}
+.navbar .nav-link:hover {
+	background: #F5C400;
 }
 
 a.btn.card-callout hover{

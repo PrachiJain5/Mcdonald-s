@@ -19,6 +19,15 @@ if (population == 'staffrm') {
 } else if (population == 'crewhi') {
     localStorage.setItem('population', 'crewhi');
 }
+$(window).on('load',function () {
+	// Run code
+	if(popValue == 'crew' || popValue == 'crewhi'){
+		$('.navbar-nav').css({'margin':'0 200px'})
+	}
+	console.log($('.navbar-nav'))
+  });
+var popValue = localStorage.getItem('population')
+
 
 currentPopulation = localStorage.getItem('population');
 console.log('currentPopulation ' + currentPopulation);
