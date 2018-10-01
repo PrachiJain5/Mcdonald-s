@@ -638,3 +638,19 @@ img.footerImage {
 .sidebar-resp-content {
     margin-left: 10px;
 } */
+ }
+
+button#navbarSupportedBtn {
+    background: #FFC836;
+}
+span.icon-bar {
+    width: 28px;
+    margin: 5px 0px;
+    background: white;
+    height: 3px;
+    display: block;
+}
+button#navbarSupportedBtn {
+    background: #FFC836;
+    padding: 5px;
+}
